@@ -1,12 +1,5 @@
 let url = 'http://localhost:3000/users/';
 
-async function awaitFetch(inGivenData) {
-    const response = await fetch(url);
-    const data = await response.json();
-    
-    return checkIfUserExists(data, inGivenData);
-}
-
 fetch(url)
 .then(response => response.json())
 .then(data => fillTables(data))
@@ -55,8 +48,8 @@ sendButton.addEventListener("click", () => {
     }
     return response.json();
     })
-    .then(data => console.log("data sent successfully"))
-    .catch(error => console.log("Error sending data"));
+    .then(data => console.log("user: " + data.name + " created successfully"))
+    .catch(error => console.log("Error sending data: " + error));
 })
 
 deleteButton.addEventListener("click", () => {
@@ -76,22 +69,13 @@ deleteButton.addEventListener("click", () => {
 
     console.log(url + inGivenData.name);
 
-    fetch(url + inGivenData.name,options)
+    let customUrl = url + "name/";
+
+    fetch((customUrl + inGivenData.name),options)
     .then(response => {
         if (!response.ok) console.log("Response not ok");
         response.json();
     })
-    .then(data => console.log("user " + data.name + " deleted successfully"))
+    .then(console.log("user deleted successfully"))
     .catch(error => console.log("an error occured: " + error));
 });
-
-/*function checkIfUserExists(data, inGivenData) {
-    data.forEach(user => {
-        if (user.name == inGivenData.name && user.email == inGivenData.email && user.password == inGivenData.password) {
-            console.log("found user: " + user.name);
-            return "http://localhost:3000/users/" + user.name;
-        }
-    });
-
-    return "";
-}*/
