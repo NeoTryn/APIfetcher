@@ -1,0 +1,32 @@
+.root {
+    --loginSectionWidth: 700px;
+    --loginSectionHeight: 300px;
+}
+
+body {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#LoginSection {
+    height: 300px;
+    width: 700px;
+
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 20px;
+
+    display:grid;
+    place-items: center;
+    grid-template-areas: 'a b';
+}
+
+#login {
+    grid-area: a;
+    margin-left: 50px;
+}
+
+#signUp {
+    grid-area: b;
+}

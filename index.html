@@ -3,23 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login to LevelUrself</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>Hello World</p>
+    
+    <section id="LoginSection">
+        <div id="login">
+            <form>
+                <input type="text" id="loginUsername">
+                <input type="password" id="loginPassword">
+            </form>
+            <button type="button" id="login" class="button">Login</button>
+            <button type="button" id="deleteButton" class="button">Delete User</button>
+        </div>
 
-    <form>
-        <input type="text" id="username">
-        <input type="email" id="email">
-        <input type="password" id="password">
-    </form>
+        <div id="signUp">
+            <form>
+                <input type="text" id="signUpUsername">
+                <input type="email" id="signUpEmail">
+                <input type="password" id="signUpPassword">
+            </form>
+            <button type="button" id="signUp" class="button">Sign Up</button>
+        </div>
+    </section>
 
-    <button type="button" id="signUp">Sign Up</button>
-    <button type="buttons" id="deleteButton">Delete User</button>
+    <!--<ul id="list">
 
-    <ul id="list">
-
-    </ul>
+    </ul>-->
 
     <script src="index.js"></script>
 </body>

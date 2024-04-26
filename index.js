@@ -1,9 +1,10 @@
 let url = 'http://localhost:3000/users/';
 
-fetch(url)
+// first fetch to our database ever
+/*fetch(url)
 .then(response => response.json())
 .then(data => fillTables(data))
-.catch(error => console.log("Smth didnt work " + error));
+.catch(error => console.log("Smth didnt work " + error));*/
 
 function fillTables(data) {
     const list = document.getElementById("list");
@@ -22,42 +23,41 @@ const deleteButton = document.getElementById("deleteButton")
 sendButton.addEventListener("click", () => {
 
     let data = {
-        name,
-        email,
-        password
+        name : document.getElementById("signUpUsername").value,
+        email : document.getElementById("signUpEmail").value,
+        password : document.getElementById("signUpPassword").value
     };
 
-    data.name = document.getElementById("username").value;
-    data.email = document.getElementById("email").value;
-    data.password = document.getElementById("password").value;
+    if (!(data.name == "" || data.email == "" || data.password == "")) {
+        const options = {
+            method: 'POST', // or 'PUT', 'DELETE', etc.
+            headers: {
+            'Content-Type': 'application/json' // specify the content type as JSON
+            },
+            body: JSON.stringify(data) // convert the data to JSON string
+        }
 
-    console.log(data);
-
-    const options = {
-        method: 'POST', // or 'PUT', 'DELETE', etc.
-        headers: {
-          'Content-Type': 'application/json' // specify the content type as JSON
-        },
-        body: JSON.stringify(data) // convert the data to JSON string
+        fetch(url, options)
+        .then(response => {
+        if (!response.ok) {
+            console.log("Response not ok");
+        }
+        return response.json();
+        })
+        .then(data => console.log("user: " + data.name + " created successfully"))
+        .catch(error => console.log("Error sending data: " + error));
     }
-
-    fetch(url, options)
-    .then(response => {
-    if (!response.ok) {
-        console.log("Response not ok");
+    else {
+        alert("Can't leave fields empty");
     }
-    return response.json();
-    })
-    .then(data => console.log("user: " + data.name + " created successfully"))
-    .catch(error => console.log("Error sending data: " + error));
 })
 
 deleteButton.addEventListener("click", () => {
 
     let inGivenData = {
-        name : document.getElementById("username").value,
-        email : document.getElementById("email").value,
-        password : document.getElementById("password").value
+        name : document.getElementById("signUpUsername").value,
+        email : document.getElementById("signUpEmail").value,
+        password : document.getElementById("signUpPassword").value
     }
 
     const options = {
