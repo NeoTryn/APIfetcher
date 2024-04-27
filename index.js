@@ -17,7 +17,7 @@ function fillTables(data) {
     });
 }
 
-const sendButton = document.getElementById("signUp");
+const sendButton = document.getElementById("signUpButton");
 const deleteButton = document.getElementById("deleteButton")
 
 sendButton.addEventListener("click", () => {

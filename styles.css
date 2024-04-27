@@ -1,17 +1,18 @@
-.root {
-    --loginSectionWidth: 700px;
-    --loginSectionHeight: 300px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     display : flex;
     justify-content: center;
     align-items: center;
+
+    font-family: "Montserrat", sans-serif;
 }
 
 #LoginSection {
     height: 300px;
     width: 700px;
+
+    margin-top: 200px;
 
     background-color: red;
     border: 2px solid black;
@@ -24,9 +25,21 @@ body {
 
 #login {
     grid-area: a;
-    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    margin-left: 87px;
 }
 
 #signUp {
     grid-area: b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
