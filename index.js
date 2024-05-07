@@ -48,7 +48,7 @@ sendButton.addEventListener("click", () => {
         return response.json();
         })
         .then(data => console.log("user: " + data.name + " created successfully"))
-        .catch(error => console.log("Error sending data: " + error));
+        .catch(error => console.error("Error sending data: " + error));
     }
     else {
         alert("Can't leave fields empty");
@@ -103,7 +103,7 @@ loginButton.addEventListener("click", () => {
 function loginByPassword(data, password, name) {
     console.log(data);
     if (data.name == name && data.password == password) {
-        window.location.href = "./after.html";
+        window.location.href = "./main/after.html";
     }
     else {
         console.error("Username or password wrong");
