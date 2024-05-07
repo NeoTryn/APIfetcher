@@ -1,4 +1,11 @@
 const createButton = document.getElementById("createCharacter");
+const darkModeButton = document.getElementById("darkModeButton");
+
+if (localStorage.getItem("bgColor") == "undefined") {
+    localStorage.setItem("bgColor", "white");
+}
+
+document.body.style.backgroundColor = localStorage.bgColor;
 
 createButton.addEventListener("click", () => {
     let url = "http://localhost:3000/characters/";
@@ -30,4 +37,15 @@ createButton.addEventListener("click", () => {
     })
     .then(data => console.log("Character: " + data.name + " created successfully"))
     .catch(error => console.error("Error sending data: " + error));
+})
+
+darkModeButton.addEventListener("click", () => {
+    if (document.body.style.backgroundColor == "black") {
+        document.body.style.backgroundColor = "white";
+        localStorage.bgColor = "white";
+    }
+    else {
+        document.body.style.backgroundColor = "black";
+        localStorage.bgColor = "black";
+    }
 })
