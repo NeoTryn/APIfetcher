@@ -20,7 +20,8 @@ function fillTables(data) {
 }
 
 const sendButton = document.getElementById("signUpButton");
-const deleteButton = document.getElementById("deleteButton")
+const deleteButton = document.getElementById("deleteButton");
+const loginButton = document.getElementById("loginButton");
 
 sendButton.addEventListener("click", () => {
 
@@ -81,3 +82,30 @@ deleteButton.addEventListener("click", () => {
     .then(console.log("user deleted successfully"))
     .catch(error => console.log("an error occured: " + error));
 });
+
+
+loginButton.addEventListener("click", () => {
+
+    let inGivenData = {
+        name : document.getElementById("loginUsername").value,
+        password : document.getElementById("loginPassword").value
+    }
+
+    let customUrl = url + "name/";
+    console.log(customUrl + inGivenData.name);
+
+    fetch((customUrl + inGivenData.name))
+    .then(response => response.json())
+    .then(data => loginByPassword(data, inGivenData.password, inGivenData.name))
+    .catch(error => console.error("An error occured: " + error));
+});
+
+function loginByPassword(data, password, name) {
+    console.log(data);
+    if (data.name == name && data.password == password) {
+        window.location.href = "./after.html";
+    }
+    else {
+        console.error("Username or password wrong");
+    }
+}
