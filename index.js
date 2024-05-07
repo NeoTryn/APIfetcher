@@ -1,19 +1,21 @@
 let url = 'http://localhost:3000/users/';
 
 // first fetch to our database ever
-/*fetch(url)
+fetch('http://localhost:3000/characters/')
 .then(response => response.json())
 .then(data => fillTables(data))
-.catch(error => console.log("Smth didnt work " + error));*/
+.catch(error => console.log("Smth didnt work " + error));
 
 function fillTables(data) {
     const list = document.getElementById("list");
 
-    data.forEach(user => {
+    data.forEach(character => {
         list.innerHTML += `
-        <li>${user.name}</li>
-        <li>${user.email}</li>
-        <li>${user.password}</li>`
+        <li>${character.name}</li>
+        <li>${character.height}</li>
+        <li>${character.alive}</li>
+        <li>${character.strength}</li>
+        <li>${character.weakness}</li>`
     });
 }
 
