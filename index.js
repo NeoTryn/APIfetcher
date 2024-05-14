@@ -1,10 +1,10 @@
 let url = 'http://localhost:3000/users/';
 
 // first fetch to our database ever
-fetch('http://localhost:3000/characters/')
+/*fetch('http://localhost:3000/characters/')
 .then(response => response.json())
 .then(data => fillTables(data))
-.catch(error => console.log("Smth didnt work " + error));
+.catch(error => console.log("Smth didnt work " + error));*/
 
 function fillTables(data) {
     const list = document.getElementById("list");
