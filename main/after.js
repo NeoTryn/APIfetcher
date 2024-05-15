@@ -1,5 +1,6 @@
 const createButton = document.getElementById("createCharacter");
 const darkModeButton = document.getElementById("darkModeButton");
+const deleteButton = document.getElementById("deleteButton");
 const url = "http://localhost:3000/characters/";
 
 if (localStorage.getItem("bgColor") == "undefined") {
@@ -18,7 +19,8 @@ createButton.addEventListener("click", () => {
         height : Number(document.getElementById("charHeight").value),
         alive : Boolean(document.getElementById("charAlive").value),
         strength : document.getElementById("charStrength").value,
-        weakness : document.getElementById("charWeakness").value
+        weakness : document.getElementById("charWeakness").value,
+        url : document.getElementById("charURL").value
     }
 
     const options = {
@@ -67,7 +69,7 @@ function fillCards(data) {
             <div class="card">
                 <h2 class="card-title">${character.name}</h2>
                 <div class="card-body">
-                    <img src="${character.img}" class="card-image" alt="Image of ${character.name}">
+                    <img src="${character.url}" class="card-image" alt="Image of ${character.name}">
                     <ul class="card-list">
                         <li>
                             <p>
@@ -95,3 +97,22 @@ function fillCards(data) {
         </li>`;
     });
 }
+
+deleteButton.addEventListener("click", () => {
+    const options = {
+        method : 'DELETE',
+        headers : {
+            'Content-Type' : 'application/json'
+        }
+    }
+
+    const name = document.getElementById("charNameDel").value;
+
+    let customUrl = url + "name/" + name + "/";
+    console.log(customUrl); 
+
+    fetch(customUrl, options)
+    .then(response => response.json())
+    .then(console.log("user deleted successfully"))
+    .catch(error => console.log("an error occured: " + error));
+})
