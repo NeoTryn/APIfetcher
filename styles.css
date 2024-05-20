@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
-    display : flex;
-    justify-content: center;
-    align-items: center;
+html, body {
+    margin:0;
+    padding: 0;
 
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+button {
     font-family: "Montserrat", sans-serif;
 }
 
@@ -12,6 +20,7 @@ body {
     height: 300px;
     width: 700px;
 
+    margin-left: 150px;
     margin-top: 200px;
 
     background-color: red;
@@ -43,3 +52,41 @@ form {
     flex-direction: column;
 }
 
+#navBar {
+    position: fixed;
+    height: 100vh;
+    width: 40px;
+
+    padding: 0;
+
+    margin-top: 0;
+
+    background-color: green;
+}
+
+#navList {
+    list-style-type: none;
+    padding: 0;
+
+    padding-left: 5px;
+}
+
+.navElem {
+    margin-left: 5px;
+}
+
+.navLink {
+    display: none;
+}
+
+.navIcon {
+    transform: scale(1.2);
+}
+
+#navBar:hover {
+    width: 100px;
+
+    .navLink {
+        display: block;
+    }
+}
