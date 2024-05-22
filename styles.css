@@ -1,92 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-html, body {
+
+html,body {
+    
     margin:0;
     padding: 0;
 
     box-sizing: border-box;
+
     font-family: "Montserrat", sans-serif;
+
+    height:100%;
 }
 
 body {
+    background: linear-gradient(45deg,#FAF9F6, #E2DFD2);
+
+    height:100%;
+}
+
+#loginSection {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 70%;
+    margin-left: 15%;
+    background-color: darkblue;
+    margin-top: 10vh;
+    border-radius: 50px;
 }
 
-button {
-    font-family: "Montserrat", sans-serif;
-}
-
-#LoginSection {
-    height: 300px;
-    width: 700px;
-
-    margin-left: 150px;
-    margin-top: 200px;
-
-    background-color: red;
-    border: 2px solid black;
-    border-radius: 20px;
-
-    display:grid;
-    place-items: center;
-    grid-template-areas: 'a b';
-}
-
-#login {
-    grid-area: a;
+.box {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
-form {
-    margin-left: 87px;
-}
-
-#signUp {
-    grid-area: b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#navBar {
-    position: fixed;
-    height: 100vh;
-    width: 40px;
-
-    padding: 0;
-
-    margin-top: 0;
-
-    background-color: green;
-}
-
-#navList {
-    list-style-type: none;
-    padding: 0;
-
-    padding-left: 5px;
-}
-
-.navElem {
-    margin-left: 5px;
-}
-
-.navLink {
-    display: none;
-}
-
-.navIcon {
-    transform: scale(1.2);
-}
-
-#navBar:hover {
-    width: 100px;
-
-    .navLink {
-        display: block;
-    }
+.border {
+    height:100%;
+    background-color: black;
 }

@@ -109,3 +109,4 @@ function loginByPassword(data, password, name) {
         console.error("Username or password wrong");
     }
 }
+
