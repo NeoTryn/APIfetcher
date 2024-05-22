@@ -28,7 +28,8 @@ sendButton.addEventListener("click", () => {
     let data = {
         name : document.getElementById("signUpUsername").value,
         email : document.getElementById("signUpEmail").value,
-        password : document.getElementById("signUpPassword").value
+        password : document.getElementById("signUpPassword").value,
+        pictureLink: "e"
     };
 
     if (!(data.name == "" || data.email == "" || data.password == "")) {
@@ -103,6 +104,8 @@ loginButton.addEventListener("click", () => {
 function loginByPassword(data, password, name) {
     console.log(data);
     if (data.name == name && data.password == password) {
+        localStorage.setItem("name", data.name);
+        localStorage.setItem("email", data.email);
         window.location.href = "./main/after.html";
     }
     else {
