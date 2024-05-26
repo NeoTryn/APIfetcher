@@ -24,33 +24,34 @@
                     <a class="nav-link" href="./index.html">Impressum</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./index.html"></a>
+                    <a class="nav-link" href="../index.html">Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <button id="darkModeButton">Dark Mode</button>
-
-    <form>
-        <p>Name: </p><input id="charName" type="text">
-        <p>Height: </p><input id="charHeight" type="number">
-        <p>Alive: </p><input id="charAlive" type="checkbox">
-        <p>Strength: </p><input id="charStrength" type="text">
-        <p>Weakness: </p><input id="charWeakness" type="text">
-        <p>URL to character Image: </p><input id="charURL" type="text">
-    </form>
+    <div class="bt-5 p-5 bg-primary">
+        <form>
+            <p>Name: </p><input id="charName" type="text">
+            <p>Height: </p><input id="charHeight" type="number">
+            <p>Alive: </p><input id="charAlive" type="checkbox">
+            <p>Strength: </p><input id="charStrength" type="text">
+            <p>Weakness: </p><input id="charWeakness" type="text">
+            <p>URL to character Image: </p><input id="charURL" type="text">
+        </form>
+    </div>
 
     <button id="createCharacter">Create a character</button>
 
     <ul id="characters">
     </ul>
-
-    <h2>Delete a character:</h2>
-    <form>
-        <p>Name: </p><input id="charNameDel" type="text">
-        <button type="button" id="deleteButton">Delete this character</button>
-    </form>
+    <div class="bt-5 p-5 bg-info">
+        <h2>Delete a character:</h2>
+        <form>
+            <p>Name: </p><input id="charNameDel" type="text">
+            <button type="button" id="deleteButton">Delete this character</button>
+        </form>
+    </div>
 
     <script src="./after.js"></script>
 </body>

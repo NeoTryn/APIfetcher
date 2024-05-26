@@ -44,17 +44,6 @@ createButton.addEventListener("click", () => {
     location.reload();
 })
 
-darkModeButton.addEventListener("click", () => {
-    if (document.body.style.backgroundColor == "black") {
-        document.body.style.backgroundColor = "white";
-        localStorage.bgColor = "white";
-    }
-    else {
-        document.body.style.backgroundColor = "black";
-        localStorage.bgColor = "black";
-    }
-})
-
 fetch(url)
 .then(response => response.json())
 .then(data => fillCards(data))
@@ -66,10 +55,10 @@ function fillCards(data) {
     data.forEach(character => {
         list.innerHTML += 
         `<li>
-            <div class="card">
-                <h2 class="card-title">${character.name}</h2>
+            <div class="card bg-light">
+                <h2 class="card-header">${character.name}</h2>
+                <img src="${character.url}" class="card-image-top" alt="Image of ${character.name}" style="width: 200px; height: 200px;">
                 <div class="card-body">
-                    <img src="${character.url}" class="card-image" alt="Image of ${character.name}">
                     <ul class="card-list">
                         <li>
                             <p>
